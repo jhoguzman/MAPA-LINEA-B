@@ -1,5 +1,3 @@
-# MAPA-LINEA-B
-MAPA DE FLOENCIA 
 {::nomarkdown} <!DOCTYPE html>
 <html>
 <meta charset="utf-8" />
