@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8" />
+
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <style>
+        #map {
+            width: 100%;
+            height: 600px;
+            box-shadow: 5px 5px 5px #888;
+        }
+    </style>
+</head>
+
+<body>
+    <b>MI SEGUNDA PAGINA WEB EN PROFUNDIZACIÓN B</b>
+    <div id="map"></div>
+    <script>
+        var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>' +
+                'contributors',
+            maxZoom: 18
+        });
+
+
+        var map = L.map('map', {
+            center: [1.620499055567015, -75.6103223780313],
+            zoom: 15,
+            layers: [osm],
+            scrollWheelZoom: true,
+        });
+
+        L.control.scale().addTo(map);
+
+        var myIcon = L.icon({
+            iconUrl: ' https://lh4.googleusercontent.com/-g6riZwSTzQg/AAAAAAAAAAI/AAAAAAAAAAA/McnbJy-Y5g8/s48-p-k-no-ns-nd/photo.jpg',
+            iconSize: [30, 30],
+            popupAnchor: [-1, -10]
+        });
+
+        var marker = L.marker([1.6202235197329824, -75.604330704544], {
+            icon: myIcon,
+            draggable: false,
+            title: 'Click aqui'
+        }).addTo(map).bindPopup('Universidad de la Amazonia <b>www.uniamazonia.edu.co.com</b>')
+            .openPopup();
+
+        var circle = L.circle([1.6202235197329824, -75.604330704544], 500, {
+            color: 'red',
+            fillColor: '#f03',
+            fillOpacity: 0.5
+        }).addTo(map).bindPopup("Universidad de la Amazonia");
+
+
+        var polygon = L.polygon([
+            [41.67778, -4.72163],
+            [41.67349, -4.71511],
+            [41.66958, -4.72017],
+            [41.67169, -4.72515]
+        ]).addTo(map)
+            .bindPopup('Mercaolid');
+
+        var myIcon = L.icon({
+            iconUrl: ' https://www.florencia-caqueta.gov.co/sites/florenciacaqueta/content/files/000861/43037_pag-wb-escudo_200x200.png',
+            iconSize: [30, 30],
+            popupAnchor: [-1, -10]
+        });
+
+        var Casa = new L.LatLng(1.613329, -75.600850);
+        var Camino1 = new L.LatLng(1.613757, -75.600817);
+        var Camino2 = new L.LatLng(1.614189, -75.602293);
+        var Camino3 = new L.LatLng(1.614201, -75.602561);
+        var Camino4 = new L.LatLng(1.614317, -75.603462);
+        var Camino5 = new L.LatLng(1.614326, -75.603949);
+        var Camino6 = new L.LatLng(1.614484, -75.604172);
+        var Camino7 = new L.LatLng(1.614605, -75.604329);
+        var Camino8 = new L.LatLng(1.614611, -75.604574);
+        var Camino9 = new L.LatLng(1.614783, -75.604652);
+        var Camino10 = new L.LatLng(1.615235, -75.604222);
+        var Camino11 = new L.LatLng(1.615515, -75.604124);
+        var Camino12 = new L.LatLng(1.615927, -75.604534);
+        var Camino13 = new L.LatLng(1.617826, -75.605704);
+        var Camino14 = new L.LatLng(1.618862, -75.606427);
+        var Camino15 = new L.LatLng(1.619899, -75.605425);
+        var Camino16 = new L.LatLng(1.620139, -75.605177);
+        var Camino17 = new L.LatLng(1.620129, -75.605131);
+
+        var latlngs = [Casa, Camino1, Camino2, Camino3, Camino4, Camino5, Camino6, Camino7, Camino8, Camino9, Camino10, Camino11, Camino12, Camino13, Camino14, Camino15, Camino16, Camino17];
+        var polyline = L.polyline(latlngs)
+            .addTo(map);
+        var polygon = L.polygon([
+            [1.615194, -75.613754],
+            [1.614470, -75.613562],
+            [1.614696, -75.612773],
+            [1.615439, -75.613005]
+        ]).addTo(map)
+            .bindPopup('Parque Santander');
+
+        var marker = L.marker([1.614923, -75.613243], {
+            draggable: true,
+        }).addTo(map)
+            .bindPopup('Parque Santander')
+            .openPopup();
+
+
+        var marker = L.marker([1.6154076605723737, -75.61396729104922], {
+            icon: myIcon,
+            draggable: false,
+            title: 'Click aqui'
+        }).addTo(map).bindPopup('Alcaldia de Florencia Caquetá <b>www.florencia-caqueta.gov.com</b>')
+            .openPopup();
+
+        var circle = L.circle([1.6154076605723737, -75.61396729104922], 500, {
+            color: 'red',
+            fillColor: '#f03',
+            fillOpacity: 0.5
+        }).addTo(map);
+    </script>
+</body>
+
+</html>
